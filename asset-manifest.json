@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ember-estates/static/css/main.844270af.css",
-    "main.js": "/ember-estates/static/js/main.b76cc753.js",
-    "index.html": "/ember-estates/index.html",
-    "main.844270af.css.map": "/ember-estates/static/css/main.844270af.css.map",
-    "main.b76cc753.js.map": "/ember-estates/static/js/main.b76cc753.js.map"
+    "main.css": "/Ember-Estates/static/css/main.844270af.css",
+    "main.js": "/Ember-Estates/static/js/main.d1577223.js",
+    "index.html": "/Ember-Estates/index.html",
+    "main.844270af.css.map": "/Ember-Estates/static/css/main.844270af.css.map",
+    "main.d1577223.js.map": "/Ember-Estates/static/js/main.d1577223.js.map"
   },
   "entrypoints": [
     "static/css/main.844270af.css",
-    "static/js/main.b76cc753.js"
+    "static/js/main.d1577223.js"
   ]
 }
