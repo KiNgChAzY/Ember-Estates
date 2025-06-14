@@ -9,9 +9,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     const loadListings = async () => {
-      const response = await axios.get(
-        "http://localhost:3001/api/houses"
-      );
+      const response = await axios.get("http://localhost:3001/api/listings");
       setListings(response.data);
     };
 
