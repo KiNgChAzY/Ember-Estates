@@ -16,7 +16,7 @@ const NewsArticle = (props) => {
                 {props.linkTo ? (
                     <Link to={props.linkTo} className="read-more">{props.linkText}</Link>
                 ) : (
-                    <a href="#" className="read-more">{props.linkText}</a>
+                    <button className="read-more">{props.linkText}</button>
                 )}
             </div>
         </article>

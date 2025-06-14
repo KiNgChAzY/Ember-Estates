@@ -9,7 +9,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     const loadListings = async () => {
-      const response = await axios.get("http://localhost:3001/api/listings");
+      const response = await axios.get("https://ember-estates-backend1.onrender.com/api/listings");
       setListings(response.data);
     };
 
