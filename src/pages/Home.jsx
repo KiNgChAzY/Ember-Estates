@@ -11,13 +11,13 @@ const Home = () => {
                     </div>
                     <div className="h-image">
                         <video autoPlay muted loop playsInline>
-                            <source src="images/8435-209066470_small.mp4" type="video/mp4" />
+                            <source src={`${process.env.PUBLIC_URL}/images/8435-209066470_small.mp4`} type="video/mp4" />
                         </video>
                     </div>
 
                     <div className="news-grid">
                         <HomeArticle 
-                            image="images/work.jpg"
+                            image={`${process.env.PUBLIC_URL}/images/work.jpg`}
                             alt="Latest Updates"
                             category="Latest Updates"
                             title="Market Insights"
@@ -26,7 +26,7 @@ const Home = () => {
                             linkText="Read More"
                         />
                         <HomeArticle 
-                            image="images/us.jpg"
+                            image={`${process.env.PUBLIC_URL}/images/us.jpg`}
                             alt="Contact Information"
                             category="Get in Touch"
                             title="Contact Our Team"
@@ -35,7 +35,7 @@ const Home = () => {
                             linkText="Contact Us"
                         />
                         <HomeArticle 
-                            image="images/buildings.jpg"
+                            image={`${process.env.PUBLIC_URL}/images/buildings.jpg`}
                             alt="Our Portfolio"
                             category="Our Work"
                             title="Featured Properties"

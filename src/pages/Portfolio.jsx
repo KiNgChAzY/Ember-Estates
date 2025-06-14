@@ -17,6 +17,7 @@ const Portfolio = () => {
 
     loadListings();
   }, []);
+
   return (
     <main>
       <div className="container">
@@ -61,22 +62,21 @@ const Portfolio = () => {
             </p>
           </div>
           <div className="portfolio-grid" id="the-listings">
-            {Listings.map((Listing) => (
-              <HousePlan
-                key={Listing._id}
-                _id={Listing._id}
-                title={Listing.title}
-                price={Listing.price}
-                address={Listing.address}
-                bedrooms={Listing.bedrooms}
-                bathrooms={Listing.bathrooms}
-                square_feet={Listing.square_feet}
-                property_type={Listing.property_type}
-                year_built={Listing.year_built}
-                features={Listing.features}
-                img_name={Listing.img_name}
-                description={Listing.description}
-
+            {listings.map((listing) => (
+              <PropertyListing
+                key={listing._id}
+                _id={listing._id}
+                title={listing.title}
+                price={listing.price}
+                address={listing.address}
+                bedrooms={listing.bedrooms}
+                bathrooms={listing.bathrooms}
+                square_feet={listing.square_feet}
+                property_type={listing.property_type}
+                year_built={listing.year_built}
+                features={listing.features}
+                img_name={listing.img_name}
+                description={listing.description}
               />
             ))}
           </div>

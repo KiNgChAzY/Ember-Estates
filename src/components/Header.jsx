@@ -13,7 +13,7 @@ const Header = () => {
     <header>
       <div className="top-bar">
         <img
-          src="images/ember.jpg"
+          src={`${process.env.PUBLIC_URL}/images/ember.jpg`}
           className="logo-img"
           alt="Ember Estates Logo"
         />
@@ -27,7 +27,7 @@ const Header = () => {
         </button>
         <div className="profile">
           <span className="profile-icon">
-            <img src="images/profile.jpg" alt="Profile Picture" />
+            <img src={`${process.env.PUBLIC_URL}/images/profile.jpg`} alt="Profile Picture" />
           </span>
           <span className="profile-name">Chase M</span>
         </div>

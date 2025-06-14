@@ -1,10 +1,10 @@
 import "../css/navigation.css";
 import { Link } from "react-router-dom";
 
-const Navigation = ({ MenuOpen }) => {
+const Navigation = ({ isMenuOpen }) => {
   return (
     <nav className="main-nav">
-      <ul id="nav-menu" className={MenuOpen ? 'show' : ''}>
+      <ul id="nav-menu" className={isMenuOpen ? 'show' : ''}>
         <li>
           <Link to="/">Home</Link>
         </li>
