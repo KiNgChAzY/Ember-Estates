@@ -1,0 +1,136 @@
+#add-property-form {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#add-link {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-main);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#add-link:hover {
+    background-color: var(--color-highlights);
+}
+
+#add-property-form form {
+    margin: 0;
+}
+
+#add-property-form h3 {
+    color: var(--color-main);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#add-property-form p {
+    margin-bottom: 15px;
+}
+
+#add-property-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+#add-property-form input, #add-property-form select, #add-property-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#add-property-form input[type="number"], #add-property-form input[type="number"] {
+    margin: 0;
+}
+
+#add-property-form input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+#add-property-form input:focus, #add-property-form select:focus, #add-property-form textarea:focus {
+    outline: none;
+    border-color: var(--color-main);
+}
+
+#add-property-form .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#add-property-form .columns div {
+    margin-bottom: 0;
+}
+
+#img-prev-section {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#img-prev {
+    max-width: 100%;
+    max-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+#img-upload {
+    margin-bottom: 15px;
+}
+
+#add-property-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-main);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#add-property-form button[type="submit"]:hover {
+    background-color: var(--color-highlights);
+}
+
+#add-property-form p:last-child {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    #add-property-form {
+        display: block;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    #add-property-form .columns {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    #add-property-form .columns div {
+        margin-bottom: 15px;
+    }
+    
+    #img-prev {
+        max-height: 150px;
+    }
+} 

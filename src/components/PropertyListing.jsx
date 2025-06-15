@@ -1,8 +1,18 @@
 const PropertyListing = (props) => {
+    const getImagePath = (imgName) => { //mozilla.org/en-US/docs/Web/API/File_API/
+        if (imgName && imgName.startsWith("images/")) {
+            return imgName;
+        }
+        if (imgName) {
+            return `images/${imgName}`;
+        }
+        return "images/default-property.jpg";
+    };
+
     return (
         <article className="news-article">
             <div className="article-image">
-                <img src={props.img_name} alt={props.title} />
+                <img src={getImagePath(props.img_name)} alt={props.title} />
             </div>
             <div className="article-div">
                 <div className="article">

@@ -11,7 +11,7 @@
     color: var(--color-main);
     margin-bottom: 24px;
     font-size: 24px;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .info-item {
@@ -22,7 +22,7 @@
     color: var(--color-main);
     margin-bottom: 3px;
     font-size: 16px;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .info-item p {
@@ -38,7 +38,7 @@
     margin-bottom: 3px;
     color: var(--color-main);
     font-weight: 500;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .form-group input, .form-group textarea {

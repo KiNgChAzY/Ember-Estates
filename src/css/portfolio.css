@@ -145,7 +145,18 @@
     color: var(--color-main);
     font-weight: 500;
     margin-left: 12px;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(255, 64, 64);
+}
+
+/* ===================== Featured Listings Header ====================== */
+.featured-listings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.featured-listings h1, .featured-listings p {
+    margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -156,5 +167,11 @@
     }
     .portfolio-grid .article-image {
         height: 240px;
+    }
+    
+    .featured-listings {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
 }

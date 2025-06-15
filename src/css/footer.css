@@ -30,7 +30,7 @@ footer {
     margin-bottom: 12px;
     padding-top: 5px;
     margin-top: 0;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .footer-section ul {

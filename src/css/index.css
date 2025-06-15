@@ -113,7 +113,7 @@ footer {
     margin-bottom: 12px;
     padding-top: 5px;
     margin-top: 0;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .footer-section ul {
@@ -267,7 +267,7 @@ footer {
     font-size: 24px;
     font-weight: bold;
     color: var(--color-main);
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .profile {
@@ -321,7 +321,7 @@ footer {
     color: var(--color-main);
     margin-bottom: 20px;
     font-size: 24px;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .info-item {
@@ -707,7 +707,7 @@ footer {
     font-size: 36px;
     color: var(--color-main);
     margin-bottom: 16px;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .news-header p {
@@ -729,7 +729,7 @@ footer {
     color: var(--color-main);
     margin-bottom: 16px;
     font-size: 24px;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .video-wrapper {
@@ -947,7 +947,7 @@ header {
     color: var(--color-main);
     font-size: 14px;
     font-weight: bold;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .video-container {
@@ -963,7 +963,7 @@ header {
     color: var(--color-main);
     margin-bottom: 16px;
     font-size: 24px;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .video-wrapper {

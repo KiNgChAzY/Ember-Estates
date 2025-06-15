@@ -1,20 +1,33 @@
 import "../css/portfolio.css";
 import PortfolioArticle from "../components/PortfolioArticle";
 import PropertyListing from "../components/PropertyListing";
+import AddPropertyForm from "../components/AddPropertyForm";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Portfolio = () => {
   const [listings, setListings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const loadListings = async () => {
+  const loadListings = async () => {
+    try {
+      setIsLoading(true);
       const response = await axios.get("https://ember-estates-backend1.onrender.com/api/listings");
       setListings(response.data);
-    };
+    } catch (error) {
+      console.error("Error loading listings:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
+  useEffect(() => {
     loadListings();
   }, []);
+
+  const updateListings = (newProperty) => {
+    setListings((listings) => [...listings, newProperty]);
+  };
 
   return (
     <main>
@@ -52,32 +65,42 @@ const Portfolio = () => {
           </div>
           <div id="spacer"></div>
 
-          <div className="news-header">
-            <h1>Featured Listings</h1>
-            <p>
-              Explore our current selection of premium properties available for
-              purchase or lease.
-            </p>
+          <div className="news-header featured-listings">
+            <div>
+              <h1>Featured Listings</h1>
+              <p>
+                Explore our current selection of premium properties available for
+                purchase or lease.
+              </p>
+            </div>
+            <AddPropertyForm updateListings={updateListings} />
           </div>
-          <div className="portfolio-grid" id="the-listings">
-            {listings.map((listing) => (
-              <PropertyListing
-                key={listing._id}
-                _id={listing._id}
-                title={listing.title}
-                price={listing.price}
-                address={listing.address}
-                bedrooms={listing.bedrooms}
-                bathrooms={listing.bathrooms}
-                square_feet={listing.square_feet}
-                property_type={listing.property_type}
-                year_built={listing.year_built}
-                features={listing.features}
-                img_name={listing.img_name}
-                description={listing.description}
-              />
-            ))}
-          </div>
+          
+          {isLoading ? (
+            <div style={{ textAlign: "center", padding: "40px" }}>
+              <p>Loading listings...</p>
+            </div>
+          ) : (
+            <div className="portfolio-grid" id="the-listings">
+              {listings.map((listing) => (
+                <PropertyListing
+                  key={listing._id}
+                  _id={listing._id}
+                  title={listing.title}
+                  price={listing.price}
+                  address={listing.address}
+                  bedrooms={listing.bedrooms}
+                  bathrooms={listing.bathrooms}
+                  square_feet={listing.square_feet}
+                  property_type={listing.property_type}
+                  year_built={listing.year_built}
+                  features={listing.features}
+                  img_name={listing.img_name}
+                  description={listing.description}
+                />
+              ))}
+            </div>
+          )}
         </section>
       </div>
     </main>

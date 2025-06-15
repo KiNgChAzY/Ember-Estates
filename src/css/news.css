@@ -19,7 +19,7 @@
     font-size: 36px;
     margin-bottom: 16px;
     text-align: left;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .news-header p {
@@ -40,7 +40,7 @@
     color: var(--color-main);
     margin-bottom: 24px;
     font-size: 24px;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .video-wrapper {
@@ -111,7 +111,7 @@
 .article .category {
     color: var(--color-main);
     font-weight: 500;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .article-div h2 {
@@ -133,7 +133,7 @@
     font-weight: 500;
     padding: 8px 0;
     position: relative;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
 }
 
 .news-content, .contact-content {

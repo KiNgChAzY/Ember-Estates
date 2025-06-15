@@ -26,7 +26,7 @@
     padding: 4px 8px;
     border-radius: 4px;
     margin: 0 24px;
-    -webkit-text-stroke: .2px white;
+    -webkit-text-stroke: .2px rgb(244, 122, 122);
     white-space: nowrap;
 }
 
