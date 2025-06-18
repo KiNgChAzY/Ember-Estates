@@ -134,6 +134,14 @@
     padding: 8px 0;
     position: relative;
     -webkit-text-stroke: .2px rgb(244, 122, 122);
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.read-more:hover {
+    color: var(--color-highlights);
 }
 
 .news-content, .contact-content {
