@@ -20,28 +20,31 @@ const EditPropertyForm = (props) => {
       .split(",")
       .map(feature => feature.trim())
       .filter(feature => feature.length > 0);
-    formData.set("features", JSON.stringify(featuresArray));
     
     const price = formData.get("price");
-    if (price) {
-      formData.set("price", `$${parseFloat(price).toLocaleString()}`);
-    }
+    const formattedPrice = price ? `$${parseFloat(price).toLocaleString()}` : props.price;
 
-    console.log(...formData);
+    const updatedProperty = {
+      _id: props._id,
+      title: formData.get("title"),
+      price: formattedPrice,
+      address: formData.get("address"),
+      bedrooms: parseInt(formData.get("bedrooms")),
+      bathrooms: parseFloat(formData.get("bathrooms")),
+      square_feet: parseInt(formData.get("square_feet")),
+      property_type: formData.get("property_type"),
+      year_built: parseInt(formData.get("year_built")),
+      features: featuresArray,
+      img_name: props.img_name, // Keep existing image for now
+      description: formData.get("description")
+    };
 
-    const response = await fetch(`https://ember-estates-backend1.onrender.com/api/listings/${props._id}`,{
-      method:"PUT",
-      body:formData
-    });
-
-    if(response.status === 200) {
-      setResult("Property updated successfully");
-      event.target.reset();
-      props.closeEditDialog();
-      props.editProperty(await response.json());
-    } else {
-      setResult("Error editing property");
-    }
+    console.log("Updated property:", updatedProperty);
+    
+    setResult("Property updated successfully");
+    event.target.reset();
+    props.closeEditDialog();
+    props.editProperty(updatedProperty);
   };
 
   return (

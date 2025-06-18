@@ -29,6 +29,20 @@ const Portfolio = () => {
     setListings((listings) => [...listings, newProperty]);
   };
 
+  const editProperty = (updatedProperty) => {
+    setListings((listings) => 
+      listings.map((listing) => 
+        listing._id === updatedProperty._id ? updatedProperty : listing
+      )
+    );
+  };
+
+  const deleteProperty = (propertyId) => {
+    setListings((listings) => 
+      listings.filter((listing) => listing._id !== propertyId)
+    );
+  };
+
   return (
     <main>
       <div className="container">
@@ -97,6 +111,8 @@ const Portfolio = () => {
                   features={listing.features}
                   img_name={listing.img_name}
                   description={listing.description}
+                  editProperty={editProperty}
+                  deleteProperty={deleteProperty}
                 />
               ))}
             </div>
