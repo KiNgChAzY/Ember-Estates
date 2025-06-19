@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const EditPropertyForm = (props) => {
   const [result, setResult] = useState("");
-  const [prevSrc, setPrevSrc] = useState("https://ember-estates-backend1.onrender.com/images/" + props.img_name);
+  const [prevSrc, setPrevSrc] = useState("https://ember-estates-backend1.onrender.com/api/listings/images/" + props.img_name);
 
   const uploadImage = (event) => {
     setPrevSrc(URL.createObjectURL(event.target.files[0]));
@@ -14,37 +14,21 @@ const EditPropertyForm = (props) => {
     setResult("... sending");
 
     const formData = new FormData(event.target);
+    console.log(...formData);
     
-    const featuresString = formData.get("features") || "";
-    const featuresArray = featuresString
-      .split(",")
-      .map(feature => feature.trim())
-      .filter(feature => feature.length > 0);
-    
-    const price = formData.get("price");
-    const formattedPrice = price ? `$${parseFloat(price).toLocaleString()}` : props.price;
+    const response = await fetch(`https://ember-estates-backend1.onrender.com/api/listings/${props._id}`, {
+      method: "PUT",
+      body: formData
+    });
 
-    const updatedProperty = {
-      _id: props._id,
-      title: formData.get("title"),
-      price: formattedPrice,
-      address: formData.get("address"),
-      bedrooms: parseInt(formData.get("bedrooms")),
-      bathrooms: parseFloat(formData.get("bathrooms")),
-      square_feet: parseInt(formData.get("square_feet")),
-      property_type: formData.get("property_type"),
-      year_built: parseInt(formData.get("year_built")),
-      features: featuresArray,
-      img_name: props.img_name, // Keep existing image for now
-      description: formData.get("description")
-    };
-
-    console.log("Updated property:", updatedProperty);
-    
-    setResult("Property updated successfully");
-    event.target.reset();
-    props.closeEditDialog();
-    props.editProperty(updatedProperty);
+    if (response.status === 200) {
+      setResult("Property updated successfully");
+      event.target.reset();
+      props.closeEditDialog();
+      props.editProperty(await response.json());
+    } else {
+      setResult("Error editing property");
+    }
   };
 
   return (
@@ -91,7 +75,7 @@ const EditPropertyForm = (props) => {
                 name="address"
                 defaultValue={props.address}
                 required
-              />
+              /> 
             </p>
 
             <section className="columns">

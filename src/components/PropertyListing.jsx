@@ -144,7 +144,6 @@ const PropertyListing = (props) => {
                     _id={property._id}
                     closeDeleteDialog={closeDeleteDialog}
                     hideProperty={hideProperty}
-                    onDeleteSuccess={props.deleteProperty}
                 />
             ) : ("")}
         </>

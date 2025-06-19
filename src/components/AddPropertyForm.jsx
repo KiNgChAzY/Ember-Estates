@@ -49,7 +49,7 @@ const AddPropertyForm = (props) => {
             formData.set("price", `$${parseFloat(price).toLocaleString()}`);
         }
 
-        const response = await fetch("http://localhost:3001/api/listings", {
+        const response = await fetch("https://ember-estates-backend1.onrender.com/api/listings/", {
             method: "POST",
             body: formData
         });
@@ -61,8 +61,7 @@ const AddPropertyForm = (props) => {
             closeAddDialog();
             props.updateListings(await response.json());
         } else {
-            const errorMessage = await response.text();
-            setResult(`Error: ${errorMessage}`);
+            setResult("Error adding");
         }
     }
 

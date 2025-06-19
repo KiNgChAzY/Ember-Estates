@@ -1,4 +1,4 @@
-/* Dialog Modal Styles */
+
 .w3-modal {
     display: block;
     position: fixed;
@@ -53,7 +53,6 @@
     color: var(--color-main);
 }
 
-/* Property Dialog Styles */
 #display-info {
     display: flex;
     flex-direction: column;

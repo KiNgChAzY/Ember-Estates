@@ -10,7 +10,7 @@ const DeleteProperty = (props) => {
     setResult("Deleting...");
     try {
       const response = await fetch(
-        `http://localhost:3001/api/listings/${props._id}`,
+        `https://ember-estates-backend1.onrender.com/api/listings/${props._id}`,
         { method: "DELETE" }
       );
       if (response.ok) {
