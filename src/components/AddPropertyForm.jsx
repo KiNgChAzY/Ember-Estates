@@ -2,8 +2,6 @@ import "../css/dialog.css";
 import "../css/addproperty.css";
 import { useState } from "react";
 
-const API_URL = process.env.REACT_APP_API_URL || "https://ember-estates-backend1.onrender.com/api";
-
 const AddPropertyForm = (props) => {
     const [result, setResult] = useState("");
     const [prevSrc, setPrevSrc] = useState("");
@@ -51,7 +49,7 @@ const AddPropertyForm = (props) => {
             formData.set("price", `$${parseFloat(price).toLocaleString()}`);
         }
 
-        const response = await fetch(`${API_URL}/listings`, {
+        const response = await fetch("http://localhost:3001/api/listings", {
             method: "POST",
             body: formData
         });
