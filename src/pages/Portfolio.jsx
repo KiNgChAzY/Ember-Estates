@@ -5,6 +5,8 @@ import AddPropertyForm from "../components/AddPropertyForm";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const API_URL = process.env.REACT_APP_API_URL || "https://ember-estates-backend1.onrender.com/api";
+
 const Portfolio = () => {
   const [listings, setListings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +14,7 @@ const Portfolio = () => {
   const loadListings = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("https://ember-estates-backend1.onrender.com/api/listings");
+      const response = await axios.get(`${API_URL}/listings`);
       setListings(response.data);
     } catch (error) {
       console.error("Error loading listings:", error);

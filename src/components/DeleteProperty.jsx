@@ -1,6 +1,8 @@
 import "../css/dialog.css";
 import React, { useState } from "react";
 
+const API_URL = process.env.REACT_APP_API_URL || "https://ember-estates-backend1.onrender.com/api";
+
 const DeleteProperty = (props) => {
   const [result, setResult] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -10,7 +12,7 @@ const DeleteProperty = (props) => {
     setResult("Deleting...");
     try {
       const response = await fetch(
-        `https://ember-estates-backend1.onrender.com/api/listings/${props._id}`,
+        `${API_URL}/listings/${props._id}`,
         { method: "DELETE" }
       );
       if (response.ok) {
