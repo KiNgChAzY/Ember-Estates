@@ -41,6 +41,7 @@ const PropertyListing = (props) => {
   };
 
   const openDeleteDialog = (e) => {
+    
     e.preventDefault();
     setShowPropertyDialog(false);
     setShowDeleteDialog(true);
